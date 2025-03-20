@@ -1,8 +1,8 @@
 /*
-	Name: Soma de números inteiros
+	Name: Soma de nÃºmeros inteiros
 	Author: Pedro Pereira Guaita
 	Date: 19/03/25 
-	Description: Soma entre os números de 1 a 10 usando laço de repetição
+	Description: Soma entre os nÃºmeros de 1 a 10 usando laÃ§o de repetiÃ§Ã£o
 */
 
 #include <stdio.h>
@@ -16,6 +16,6 @@ int main()
         soma += i;
     }
     
-    printf("A soma dos múmero entre 1 e 10 é: %d", soma);
+    printf("A soma dos mÃºmero entre 1 e 10 Ã©: %d", soma);
 }
 
