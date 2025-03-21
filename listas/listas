@@ -1,0 +1,69 @@
+/*
+	Name: Lista Ligada
+	Author: Pedro Pereira Guaita
+	Date: 19/03/25 
+	Description: Implementação de Lista Ligada (Encadeada)
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include <windows.h>
+
+//Declaração de struct
+
+typedef struct No
+{
+	char *nome;
+	int idade;
+	float altura;
+	struct No *proximo;
+};
+
+
+typedef struct 
+{
+	No *inicio, *fim;
+	int tamanho;
+	
+}Lista;
+
+
+// função para inserir um Nó (Elemento) no inicio da lista
+
+void inserirInicioLista(Lista *list, char *n, int id, float alt)  //char (*)n pq é um conjunto de caracteres
+ {             //tipo nó
+	No *novo = (No*)malloc(sizeof(No)); //reserva espaço na memória para armazenar um nó (em bytes)
+	novo->nome = n;
+	novo->idade = id;
+	novo->altura = alt;
+	
+	if(list->inicio == NULL) //A lista está vazia
+	{
+		novo->proximo = NULL;
+		list->inicio = novo;
+		list->fim = novo;
+	}
+	else //a lista não está vazia
+	{
+		novo->proximo = list->inicio;
+		list->inicio = novo;
+	}
+	list->tamanho++;
+	
+	puts("Elemento inserido com sucesso!");
+	
+} // fim da função
+
+
+int main()
+{
+	Lista pessoas;
+	char *nome = "Pedro";
+	int idade = 20;
+	float altura = 1.68;
+	
+	inserirInicioLista(&pessoas, nome, idade, altura);
+	
+} //fim do programa
