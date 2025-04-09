@@ -80,21 +80,25 @@ void inserirFimLista(Lista *lista, char *nome, int idade,float altura)
 
 
 // Função para inserir um Nó (elemento) no meio da lista, em uma posição específica
-void inserirMeioLista(Lista *lista, char *nome, int idade, float altura, int posicao) {
+void inserirMeioLista(Lista *lista, char *nome, int idade, float altura, int posicao) 
+{
     // Verifica se a posição é válida
-    if(posicao < 0 || posicao > lista->tamanho) {
+    if(posicao < 0 || posicao > lista->tamanho) 
+    {
         puts("Posicao invalida!");
         return;
     }
 
     // Se a posição for 0, insere no início
-    if(posicao == 0) {
+    if(posicao == 0) 
+    {
         inserirInicioLista(lista, nome, idade, altura);
         return;
     }
 
     // Se a posição for igual ao tamanho, insere no fim
-    if(posicao == lista->tamanho) {
+    if(posicao == lista->tamanho) 
+    {
         inserirFimLista(lista, nome, idade, altura);
         return;
     }
@@ -106,7 +110,8 @@ void inserirMeioLista(Lista *lista, char *nome, int idade, float altura, int pos
 
     No *atual = lista->inicio;
     // Percorre até a posição anterior à desejada
-    for(int i = 0; i < posicao - 1; i++) {
+    for(int i = 0; i < posicao - 1; i++) 
+    {    
         atual = atual->proximo;
     }
 
@@ -161,17 +166,19 @@ void retirarNoLista(Lista *lista, char *nomeRemover)
 		deleteNo = lista->inicio;
 		lista->inicio = deleteNo->proximo;
 		
-		if(lista->inicio == NULL){
+		if(lista->inicio == NULL)
+		{
 			lista->fim= NULL;
 		}
 	}
 	else //Remover nós do meio ou do fim da lista
 	{
-		while(inicio != NULL && inicio->proximo != NULL && inicio->proximo->nome != nomeRemover){
+		while(inicio != NULL && inicio->proximo != NULL && inicio->proximo->nome != nomeRemover)
+		{
 			inicio = inicio->proximo;
 		}
-		if(inicio != NULL && inicio != NULL){
-			
+		if(inicio != NULL && inicio->proximo != NULL)
+		{
 			deleteNo = inicio->proximo;
 			inicio->proximo = deleteNo->proximo;
 			if(inicio->proximo == NULL){
@@ -212,7 +219,8 @@ int main()
 	    printf("Escolha uma opcao: ");
 	    scanf("%d", &opc);
 	    
-    switch(opc){
+    switch(opc)
+    {
         case 1:
             puts("Inserir no INICIO da lista");
             puts ("=========================");
