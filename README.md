@@ -10,8 +10,10 @@ Este repositório contém meus estudos da linguagem C, com foco em fundamentos d
 - Funções
 - Structs
 - Pilhas
+- Filas
 - Listas encadeadas
-- Algoritmos de ordenação (como Bubble Sort)
+- Algoritmos de ordenação
+- Busca sequencial e binária
 
 
 
